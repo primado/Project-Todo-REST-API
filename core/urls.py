@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
+admin.site.site_title = "The Project Todo REST API"
+admin.site.site_header = "Project Todo REST API"
+admin.site.index_title = "Site administration"
+
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('storeadmin/', admin.site.urls),
     path('', include('todo_api.urls', namespace='todo_api')),
     path('api/auth/', include('accounts.urls', namespace='accounts'))
 
